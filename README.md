@@ -3,7 +3,7 @@ This is the todo app known by "studentapp" which may be helpful for beginner.Thi
 1.learning CRUD operation in .net core MVC.
 2.How to upload file
 3.Use of viewmodel
-4.How to make interface
+4.How to make Service
 
 ![createstudent](https://github.com/Sagardip/studentapp/blob/master/srcimg/createstudent.JPG)
 ![studentlist](https://github.com/Sagardip/studentapp/blob/master/srcimg/studentlist.JPG)
