@@ -1,0 +1,41 @@
+@model StudentCreateVM
+@TempData["editmessage"]
+@{
+    var photopath="~/uploads/"+(Model.EditImagePath ?? "noimage.jpg");
+
+}
+<div class="row">
+    <div class="col-md-4"></div>
+   <div class="col-md-4">
+       <h1 class="form-title mt-3">Edit your Information</h1>
+       <hr>
+<fieldset class="form-bg">
+<form class="m-1 p-1" enctype="multipart/form-data" method="post">
+    <div class="form-group">
+        <label class="text-light" asp-for="Name"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+        <label class="text-light" asp-for="Roll_no"></label>
+        <input asp-for="Roll_no" class="form-control"/>
+        <span asp-validation-for="Roll_no" class="text-danger"></span>
+        <label class="text-light" asp-for="DisplayImage">Image</label>
+       <input asp-for="DisplayImage " class="form-control-file text-light" type="file"  id="file" />
+        <span asp-validation-for="DisplayImage " class="text-danger"></span>
+        <div class="image position"> <img src="@photopath" alt="editimage" class="image no-border" asp-append-version="true" id="imagepath">
+        <h5 class="icon" id="crossicon"><i class="far fa-times-circle"></i></h5> 
+        </div>
+       
+        <select asp-for="SelectedCollegeId" class="form-control mt-3" id="exampleFormControlSelect1" asp-items="@(new SelectList(Model.Colleges,"Id","name"))">
+             <option>Select</option>
+         </select>
+
+</div>
+    <button type="submit" class="btn btn-primary">update</button>
+    <button  ctype="button" class="btn btn-warning " asp-action="Index">Cancel</button>
+</form>
+</fieldset>
+</div>
+   <div class="col-md-4">
+
+</div>
+</div>

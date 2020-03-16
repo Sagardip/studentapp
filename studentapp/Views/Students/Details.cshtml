@@ -1,0 +1,15 @@
+@model  StudentDetailsVM
+@{
+    var student=Model as StudentDetailsVM;
+}
+<div class="row">
+   <div class="col-md-3">
+ <div class="details-img "><img src="/uploads/@student.EditImagePath" alt="ok"></div>
+   </div>
+    <div class="col-md-3">
+      <h4 class="title-cat"> <span class="text-primary">Name:</span>  @student.Name</h4>
+      <hr>
+      <h4 class="title-cat"><span class="text-primary">Roll no:</span>  @student.Roll_no</h4>
+          <h4 class="title-cat"><span class="text-primary">College:</span> @student.College.name</h4>
+        </div>
+</div>

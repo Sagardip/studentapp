@@ -1,0 +1,37 @@
+@model IEnumerable<College>
+     @TempData["message"],
+
+
+<h1>College List</h1>
+<table class="table mt-3">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Address</th>
+      <!-- <th scope="col">Date of Registration</th> -->
+
+    </tr>
+  </thead>
+  <tbody>
+
+
+      @foreach (var college in Model)
+    {
+       <tr>
+         <td scope="row">@college.Id </td>
+        <td><a asp-action="Details" asp-route-id="@college.Id">@college.name</a> </td>
+        <td>@college.address </td>
+        <td>
+        <form asp-action="Delete" method="post" asp-route-id="@college.Id">
+               <button>Delete</button>
+              </form> </td><td>
+         <a asp-action="Edit"  asp-route-id="@college.Id">
+               <button>Edit</button>
+              </a> </td>
+        </tr>
+
+ }
+
+  </tbody>
+</table>
